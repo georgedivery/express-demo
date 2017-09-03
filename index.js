@@ -1,28 +1,12 @@
-const express = require('express')
-const mongoose = require('mongoose')
+const express = require('express');
 
 let app = express()
+let env = process.env.NODE_ENV || 'development';
+let config = require('./server/config/config')[env]
 
-mongoose.Promise =  global.Promise
+require('./server/config/database')(config)
+require('./server/config/express')(config, app)
+require('./server/config/routes')(app)
 
-app.set('view engine', 'pug')
-app.set('views', './server/views')
-
-let env = process.env.NODE_ENV || 'development'
-let port = process.port || 5656
-
-app.use(express.static('public'))  
-
-app.get('/', function(req, res) {
-	mongoose.createConnection('mongodb://localhost:27017/express-demo-db')
-
-	console.log('Mongo ready')
-	
-	res.render('index')
-	
-})
-
-
-
-app.listen(port)
-console.log('express ready ' + port) 
+app.listen(config.port)
+console.log('express ready ' + config.port)
