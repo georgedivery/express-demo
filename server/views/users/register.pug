@@ -1,0 +1,32 @@
+extends ../layout/layout
+block main-content
+	div.wrapper
+		h1 register page
+
+		form(method="post" action="/users.create")
+			label(for="username") username
+			br
+			input(type="text" name="username" id="username")
+			br
+
+			label(for="password") password
+			br
+			input(type="text" name="password" id="password")
+			br
+
+			label(for="confirm-password") confirm-password
+			br
+			input(type="text" name="confirm-password" id="confirm-password")
+			br
+
+			label(for="firstName") firstName
+			br
+			input(type="text" name="firstName" id="firstName")
+			br
+
+			label(for="lastName") lastName
+			br
+			input(type="text" name="lastName" id="lastName")
+			br
+			br
+			input(type="submit" value=" go ")

@@ -14,8 +14,10 @@
   },
   "homepage": "https://github.com/georgedivery/express-demo#readme",
   "dependencies": {
+    "cookie-parser": "1.4.3",
     "express": "4.15.4",
     "mongoose": "4.11.9",
+    "passport-local": "1.0.0",
     "pug": "2.0.0-rc.3"
   }
 }

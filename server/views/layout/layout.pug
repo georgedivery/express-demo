@@ -5,11 +5,15 @@ html
 		link(href="/css/main.css" rel="stylesheet")
 		link(href="/img/favicon.ico" rel="shortcut icon" type="image/x-icon" )
 	body
+		if(globalError)
+			div.globalEror =globalEror
 		div.wrapper
 			ul.menu
 				li
 					a(href="/") home
 				li
 					a(href="/about") about
+				li
+					a(href="/user/register") register
 	
 		block main-content	 
