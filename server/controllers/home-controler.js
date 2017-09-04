@@ -6,3 +6,4 @@ module.exports = {
 		res.render('home/about')
 	}
 }
+
